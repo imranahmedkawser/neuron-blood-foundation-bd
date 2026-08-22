@@ -73,25 +73,21 @@
 </div>
 
 <script type="module">
- // 1. Tomar Notun Firebase Config
-<script type="module">
- // 1. Tomar Notun Firebase Config
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
- import { getDatabase, ref, push, get, onValue, update, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
- const firebaseConfig = {
-   apiKey: "AIzaSyDdV-UefFIjoPsGnJqPoJBGVPcB7Fb5300",
-   authDomain: "neuron-blood-foundation-bd.firebaseapp.com",
-   databaseURL: "https://neuron-blood-foundation-bd-default-rtdb.firebaseio.com", // Eita add korlam
-   projectId: "neuron-blood-foundation-bd",
-   storageBucket: "neuron-blood-foundation-bd.firebasestorage.app",
-   messagingSenderId: "996355512162",
-   appId: "1:996355512162:web:c57adedcd0fb4727da3e3b",
-   measurementId: "G-XB8DX8X8JC"
- };
-
- const app = initializeApp(firebaseConfig);
- const db = getDatabase(app);
+const firebaseConfig = {
+  apiKey: "AIzaSyDdV-UefFIjoPsGnJqPoJBGVPcB7Fb5300",
+  authDomain: "neuron-blood-foundation-bd.firebaseapp.com",
+  databaseURL: "https://neuron-blood-foundation-bd-default-rtdb.firebaseio.com",
+  projectId: "neuron-blood-foundation-bd",
+  storageBucket: "neuron-blood-foundation-bd.firebasestorage.app",
+  messagingSenderId: "996355512162",
+  appId: "1:996355512162:web:c57adedcd0fb4727da3e3b"
+};
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+ 
  // 2. Register Function
  window.register = function(){
  if(!name.value || !phone.value){alert("Name + Phone Must"); return;}
@@ -131,7 +127,23 @@
  document.getElementById('regForm').style.display = "none";
  document.getElementById('memberPanel').style.display = "none";
  document.getElementById('adminPanel').style.display = "block";
+
+  window.register = function(){
+ const name = document.getElementById('name').value;
+ const phone = document.getElementById('phone').value;
+ if(name=="" || phone==""){ alert("Name + Phone Must"); return; }
  
+ push(ref(db, 'members'), {
+   name: name,
+   phone: phone,
+   email: document.getElementById('email').value,
+   blood: document.getElementById('blood').value,
+   age: document.getElementById('age').value,
+   status: "Pending" // Eita must
+ });
+ alert("Registration Successful! Admin Approval Pending");
+  }
+  
  onValue(ref(db, 'members'), (snapshot) => {
  pendingList.innerHTML = "";
  snapshot.forEach((childSnap) => {
