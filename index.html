@@ -47,16 +47,6 @@
  <button class="btn" style="width:100%" onclick="register()">Register as Blood Donor</button>
  </div>
 
- <!-- 2. Member Dashboard -->
- <div id="memberPanel">
- <h3>Welcome, <span id="mName"></span></h3>
- <p><b>Phone:</b> <span id="mPhone"></span></p>
- <p><b>Blood:</b> <span id="mBlood"></span></p>
- <h4>My Activities:</h4>
- <ul><li>Status: <span id="mStatus"></span></li></ul>
- <button class="btn" onclick="logout()">Logout</button>
- </div>
-
 <!-- Admin Panel -->
 <div id="adminPanel" class="panel" style="display:none;">
  <h3>Admin Login</h3>
@@ -69,6 +59,12 @@
  <button class="btn" onclick="logout()">Back</button>
  </div>
 
+ <div id="adminPanel" class="panel" style="display:none;">
+ <input id="adminPass" type="password" placeholder="Password">
+ <button onclick="adminLogin()">Login</button>
+ <div id="adminContent" style="display:none;"><div id="pendingList"></div></div>
+</div>
+ 
  </div>
 </div>
 
