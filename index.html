@@ -73,24 +73,23 @@
 </div>
 
 <script type="module">
- // 1. Tomar Firebase Config
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
- import { getDatabase, ref, push, get, child, onValue, update } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+ // 1. Tomar Notun Firebase Config
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+ import { getDatabase, ref, push, get, onValue, update, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
  const firebaseConfig = {
- apiKey: "AIzaSyDaiKUjDOcyK_BfpK76LzzXtpOgsRuQoPc",
- authDomain: "neuron-foundation.firebaseapp.com",
- databaseURL: "https://neuron-foundation-default-rtdb.asia-southeast1.firebasedatabase.app",
- projectId: "neuron-foundation",
- storageBucket: "neuron-foundation.firebasestorage.app",
- messagingSenderId: "451445636516",
- appId: "1:451445636516:web:15004e1af05cced6385531",
- measurementId: "G-RBFSKMQ904"
+   apiKey: "AIzaSyDdV-UefFIjoPsGnJqPoJBGVPcB7Fb5300",
+   authDomain: "neuron-blood-foundation-bd.firebaseapp.com",
+   databaseURL: "https://neuron-blood-foundation-bd-default-rtdb.firebaseio.com", // Eita add korlam
+   projectId: "neuron-blood-foundation-bd",
+   storageBucket: "neuron-blood-foundation-bd.firebasestorage.app",
+   messagingSenderId: "996355512162",
+   appId: "1:996355512162:web:c57adedcd0fb4727da3e3b",
+   measurementId: "G-XB8DX8X8JC"
  };
 
  const app = initializeApp(firebaseConfig);
  const db = getDatabase(app);
-
  // 2. Register Function
  window.register = function(){
  if(!name.value || !phone.value){alert("Name + Phone Must"); return;}
