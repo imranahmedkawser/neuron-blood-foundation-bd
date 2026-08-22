@@ -123,11 +123,35 @@ const db = getDatabase(app);
  }
  
  // 4. Admin Panel
- window.showAdmin = function(){
- document.getElementById('regForm').style.display = "none";
- document.getElementById('memberPanel').style.display = "none";
- document.getElementById('adminPanel').style.display = "block";
+const ADMIN_PASSWORD = "neuron123";
 
+window.showAdmin = function(){ 
+ hideAll(); 
+ document.getElementById('adminPanel').style.display='block'; 
+}
+
+window.adminLogin = function(){
+ if(document.getElementById('adminPass').value == ADMIN_PASSWORD){
+   document.getElementById('adminContent').style.display="block"; 
+   loadPending();
+ } else { alert("Wrong Password!") }
+}
+
+function loadPending(){
+ onValue(ref(db, 'members'), (snapshot) => {
+   pendingList.innerHTML = "";
+   snapshot.forEach((childSnap) => {
+     if(childSnap.val().status == "Pending"){
+       pendingList.innerHTML += `<p>${childSnap.val().name} - ${childSnap.val().phone} <button onclick="approve('${childSnap.key}')">Approve</button></p>`
+     }
+   })
+ })
+}
+
+window.approve = function(id){
+ update(ref(db, 'members/' + id), {status: "Approved"});
+}
+ 
   window.register = function(){
  const name = document.getElementById('name').value;
  const phone = document.getElementById('phone').value;
