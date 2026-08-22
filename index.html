@@ -57,10 +57,14 @@
  <button class="btn" onclick="logout()">Logout</button>
  </div>
 
- <!-- 3. Admin Panel -->
- <div id="adminPanel">
- <h3>Admin Panel</h3>
- <p>Pending Members:</p>
+<!-- Admin Panel -->
+<div id="adminPanel" class="panel" style="display:none;">
+ <h3>Admin Login</h3>
+ <input id="adminPass" type="password" placeholder="Password: neuron123">
+ <button class="btn" onclick="adminLogin()">Login</button>
+ 
+ <div id="adminContent" style="display:none;">
+ <h3>All Members:</h3>
  <div id="pendingList">Loading...</div>
  <button class="btn" onclick="logout()">Back</button>
  </div>
