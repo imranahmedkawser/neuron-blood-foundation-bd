@@ -5,49 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neuron Blood Foundation BD</title>
 <style>
-body{background:#000;color:#fff;margin:0;font-family:sans-serif}
-header{background:#c00;padding:15px;display:flex;justify-content:space-between;align-items:center}
-header a{color:#fff;text-decoration:none;margin:0 10px;font-weight:bold}
-.btn{background:#c00;color:#fff;border:none;padding:10px 15px;margin:5px;border-radius:5px;cursor:pointer}
-.panel{background:#111;margin:20px;padding:20px;border-radius:10px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif}
+body{background:#0a0a0a;color:#fff;background-image:radial-gradient(#ffffff10 1px, transparent 1px);background-size:20px 20px}
+header{background:#fff;display:flex;justify-content:space-between;align-items:center;padding:15px 50px;box-shadow:0 2px 10px #000}
+header .logo{font-size:20px;font-weight:bold;color:#c00}
+header nav a{color:#333;text-decoration:none;margin:0 12px;font-weight:500}
+header .btn-red{background:#c00;color:#fff;padding:8px 15px;border-radius:5px}
+.container{display:flex;justify-content:space-between;align-items:center;padding:60px 50px;min-height:80vh}
+.left{width:55%}
+.left h1{font-size:45px;color:#c00;line-height:1.2}
+.left h1 span{color:#fff}
+.left p{margin:20px 0;font-size:16px;color:#ccc}
+.btn{background:#c00;color:#fff;border:none;padding:12px 25px;margin-right:10px;border-radius:5px;cursor:pointer;font-weight:bold}
+.btn-outline{background:transparent;border:2px solid #c00;color:#c00}
+.right{background:#fff;color:#000;padding:25px;border-radius:10px;width:40%;box-shadow:0 0 20px #000}
+.right h2{color:#c00;text-align:center;margin-bottom:5px}
+.right input, .right select{width:100%;padding:10px;margin:8px 0;border:1px solid #ddd;border-radius:5px}
+.form-row{display:flex;gap:10px}
+.form-row input, .form-row select{width:50%}
+@media(max-width:900px){.container{flex-direction:column}.left,.right{width:100%}}
 </style>
 </head>
+<body>
 
 <header>
-  <div><b>Neuron Blood Foundation</b></div>
-  <div>
-    <a href="#" onclick="showReg()">Donate Blood</a>
-    <a href="#" onclick="showMembers()">Member Login</a>
-    <a href="#" onclick="showAdmin()">Admin</a>
-  </div>
+  <div class="logo">নিউরন <span style="color:#000">ফাউন্ডেশন</span></div>
+  <nav>
+    <a href="#">Home</a><a href="#">Donate Blood</a><a href="#">About Us</a><a href="#">Contact</a>
+    <a href="#" class="btn-red">Become a Member</a>
+  </nav>
 </header>
 
-<div id="regForm" class="panel" style="display:none;">
-  <h2>Donor Registration</h2>
-  <input type="text" id="name" placeholder="Full Name">
-  <input type="tel" id="phone" placeholder="Phone Number">
-  <input type="email" id="email" placeholder="Email Address">
-  <select id="blood">
-    <option value="">Select Blood Group</option>
-    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
-    <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
-  </select>
-  <input type="number" id="age" placeholder="Age">
-  <button class="btn" onclick="register()">Submit</button>
-</div>
+<div class="container">
+  <div class="left">
+    <h1>Neuron Blood<br><span>Foundation BD</span></h1>
+    <p><i>With youth; on the path of humanity</i></p>
+    <p>Join us in our mission to create positive social change through community service, humanitarian aid, and youth development initiatives across Bangladesh.</p>
+    <button class="btn">Become a Member</button>
+    <button class="btn btn-outline" onclick="document.getElementById('reg').scrollIntoView()">Donate Blood</button>
+  </div>
 
-<div id="memberPanel" class="panel" style="display:none;">
-  <h2>Approved Donors</h2>
-  <div id="memberList">Loading...</div>
-</div>
-
-<div id="adminPanel" class="panel" style="display:none;">
-  <h2>Admin Login</h2>
-  <input type="password" id="adminPass" placeholder="Password">
-  <button class="btn" onclick="adminLogin()">Login</button>
-  <div id="adminContent" style="display:none;">
-    <h3>Pending Approvals</h3>
-    <div id="pendingList"></div>
+  <div class="right" id="reg">
+    <h2>❤️ Blood Donor Registration</h2>
+    <p style="text-align:center;font-size:12px;color:#666;margin-bottom:15px">Join our community of life-savers and help those in need</p>
+    
+    <input type="text" id="name" placeholder="Full Name *">
+    <input type="tel" id="phone" placeholder="Phone Number *">
+    <input type="email" id="email" placeholder="Email Address">
+    <div class="form-row">
+      <select id="blood"><option>Select blood group</option><option>A+</option><option>B+</option><option>O+</option><option>AB+</option></select>
+      <input type="number" id="age" placeholder="Age *">
+    </div>
+    <div class="form-row">
+      <select id="division"><option>Select division</option><option>Dhaka</option><option>Chittagong</option></select>
+      <input type="text" id="district" placeholder="District *">
+    </div>
+    <button class="btn" style="width:100%;margin-top:10px" onclick="register()">❤️ Register as Blood Donor</button>
   </div>
 </div>
 
