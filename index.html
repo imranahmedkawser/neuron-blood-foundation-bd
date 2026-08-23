@@ -5,20 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neuron Blood Foundation BD</title>
 <style>
-body{font-family:sans-serif;background:#f4f4f4;margin:0;padding:0;text-align:center}
-header{background:#c00;color:#fff;padding:15px;font-size:22px;font-weight:bold}
-.btn{background:#c00;color:#fff;border:none;padding:12px 20px;margin:10px;border-radius:8px;cursor:pointer;font-size:16px}
-.panel{background:#fff;margin:20px auto;padding:20px;border-radius:10px;max-width:500px;box-shadow:0 0 10px #ccc;text-align:left}
-input,select{width:95%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:5px}
+body{background:#000;color:#fff;margin:0;font-family:sans-serif}
+header{background:#c00;padding:15px;display:flex;justify-content:space-between;align-items:center}
+header a{color:#fff;text-decoration:none;margin:0 10px;font-weight:bold}
+.btn{background:#c00;color:#fff;border:none;padding:10px 15px;margin:5px;border-radius:5px;cursor:pointer}
+.panel{background:#111;margin:20px;padding:20px;border-radius:10px}
 </style>
 </head>
-<body>
 
-<header>Neuron Blood Foundation BD</header>
-
-<button class="btn" onclick="showReg()">Donate Blood</button>
-<button class="btn" onclick="showMembers()">Find Donor</button>
-<button class="btn" onclick="showAdmin()">Admin Panel</button>
+<header>
+  <div><b>Neuron Blood Foundation</b></div>
+  <div>
+    <a href="#" onclick="showReg()">Donate Blood</a>
+    <a href="#" onclick="showMembers()">Member Login</a>
+    <a href="#" onclick="showAdmin()">Admin</a>
+  </div>
+</header>
 
 <div id="regForm" class="panel" style="display:none;">
   <h2>Donor Registration</h2>
