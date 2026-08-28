@@ -1599,26 +1599,21 @@ document
 
 /* MEMBER SUBMIT */
 
-window.submitMember=async function(){
+window.submitMember = async function(){
 
-    const step2 =
-    document.getElementById(
-        "memberStep2"
+    const step2 = document.getElementById("memberStep2");
+
+    /* CHECK PAGE 2 REQUIRED FIELDS */
+
+    const inputs = step2.querySelectorAll(
+        "input, select, textarea"
     );
-
-
-    const inputs =
-    step2.querySelectorAll(
-        "input,select,textarea"
-    );
-
 
     for(const input of inputs){
 
         if(!input.checkValidity()){
 
             input.reportValidity();
-
             return;
 
         }
@@ -1626,12 +1621,10 @@ window.submitMember=async function(){
     }
 
 
-    const mobile =
-    document
-    .getElementById("mobileNumber")
-    .value
-    .trim();
+    /* MOBILE VALIDATION */
 
+    const mobile =
+    document.getElementById("mobileNumber").value.trim();
 
     if(!/^01[0-9]{9}$/.test(mobile)){
 
@@ -1644,12 +1637,10 @@ window.submitMember=async function(){
     }
 
 
-    const whatsapp =
-    document
-    .getElementById("whatsapp")
-    .value
-    .trim();
+    /* WHATSAPP VALIDATION */
 
+    const whatsapp =
+    document.getElementById("whatsapp").value.trim();
 
     if(
         whatsapp &&
@@ -1665,185 +1656,100 @@ window.submitMember=async function(){
     }
 
 
+    /* LAST BLOOD DONATION */
+
     const lastBlood =
-    document
-    .getElementById("lastBloodDonate")
-    .value;
+    document.getElementById("lastBloodDonate").value;
 
+    let lastBloodDate = "";
 
-    let lastBloodDate="";
+    if(lastBlood === "No Experience"){
 
-
-    if(lastBlood==="No Experience"){
-
-        lastBloodDate =
-        "No Experience";
+        lastBloodDate = "No Experience";
 
     }
     else{
 
         lastBloodDate =
-        document
-        .getElementById("lastBloodDate")
-        .value;
+        document.getElementById("lastBloodDate").value;
 
     }
 
 
-    if(
-        lastBlood==="date" &&
-        !lastBloodDate
-    ){
+    /* MEMBER DATA */
 
-        alert(
-            "Please select last blood donation date."
-        );
-
-        return;
-
-    }
-
-
-    const memberData={
+    const memberData = {
 
         fullNameBangla:
-        document
-        .getElementById("fullNameBangla")
-        .value
-        .trim(),
+        document.getElementById("fullNameBangla").value.trim(),
 
         fullNameEnglish:
-        document
-        .getElementById("fullNameEnglish")
-        .value
-        .trim(),
+        document.getElementById("fullNameEnglish").value.trim(),
 
         fatherName:
-        document
-        .getElementById("fatherName")
-        .value
-        .trim(),
+        document.getElementById("fatherName").value.trim(),
 
         motherName:
-        document
-        .getElementById("motherName")
-        .value
-        .trim(),
+        document.getElementById("motherName").value.trim(),
 
         dateOfBirth:
-        document
-        .getElementById("dateOfBirth")
-        .value,
+        document.getElementById("dateOfBirth").value,
 
         nidBirth:
-        document
-        .getElementById("nidBirth")
-        .value,
+        document.getElementById("nidBirth").value,
 
         mobileNumber:
         mobile,
 
         gender:
-        document
-        .getElementById("gender")
-        .value,
+        document.getElementById("gender").value,
 
         email:
-        document
-        .getElementById("email")
-        .value
-        .trim(),
+        document.getElementById("email").value.trim(),
 
         whatsapp:
         whatsapp,
 
         facebookLink:
-        document
-        .getElementById("facebookLink")
-        .value
-        .trim(),
+        document.getElementById("facebookLink").value.trim(),
 
 
-        currentAddress:{
+        currentAddress: {
 
             division:
-            document
-            .getElementById(
-                "currentDivision"
-            )
-            .value,
+            document.getElementById("currentDivision").value,
 
             district:
-            document
-            .getElementById(
-                "currentDistrict"
-            )
-            .value,
+            document.getElementById("currentDistrict").value,
 
             upazila:
-            document
-            .getElementById(
-                "currentUpazila"
-            )
-            .value,
+            document.getElementById("currentUpazila").value,
 
             villageTown:
-            document
-            .getElementById(
-                "currentVillage"
-            )
-            .value
-            .trim(),
+            document.getElementById("currentVillage").value.trim(),
 
             address:
-            document
-            .getElementById(
-                "currentAddress"
-            )
-            .value
-            .trim()
+            document.getElementById("currentAddress").value.trim()
 
         },
 
 
-        permanentAddress:{
+        permanentAddress: {
 
             division:
-            document
-            .getElementById(
-                "permanentDivision"
-            )
-            .value,
+            document.getElementById("permanentDivision").value,
 
             district:
-            document
-            .getElementById(
-                "permanentDistrict"
-            )
-            .value,
+            document.getElementById("permanentDistrict").value,
 
             upazila:
-            document
-            .getElementById(
-                "permanentUpazila"
-            )
-            .value,
+            document.getElementById("permanentUpazila").value,
 
             villageTown:
-            document
-            .getElementById(
-                "permanentVillage"
-            )
-            .value
-            .trim(),
+            document.getElementById("permanentVillage").value.trim(),
 
             address:
-            document
-            .getElementById(
-                "permanentAddress"
-            )
-            .value
-            .trim()
+            document.getElementById("permanentAddress").value.trim()
 
         },
 
@@ -1853,17 +1759,12 @@ window.submitMember=async function(){
 
         physicalComplications:
         document
-        .getElementById(
-            "physicalComplications"
-        )
-        .value
-        .trim(),
+        .getElementById("physicalComplications")
+        .value.trim(),
 
         interestedRole:
         document
-        .getElementById(
-            "interestedRole"
-        )
+        .getElementById("interestedRole")
         .value,
 
         status:
@@ -1878,35 +1779,17 @@ window.submitMember=async function(){
     };
 
 
-    const message =
-    document.getElementById(
-        "memberMessage"
-    );
-
+    /* SAVE TO FIRESTORE */
 
     try{
 
-        message.innerHTML =
-        "<div class='success'>Submitting...</div>";
-
-
         await addDoc(
-            collection(
-                db,
-                "members"
-            ),
+            collection(db, "members"),
             memberData
         );
 
 
-        /* SUCCESS */
-
-        message.innerHTML =
-        "<div class='success'>" +
-        "✅ Registration Submitted Successfully!<br>" +
-        "Your application is now pending for admin approval." +
-        "</div>";
-
+        /* SUCCESS MESSAGE */
 
         alert(
             "✅ Registration Submitted Successfully!\n\n" +
@@ -1914,145 +1797,78 @@ window.submitMember=async function(){
         );
 
 
-        /* RESET PAGE 1 */
+        /* RESET PAGE 1 FIELDS */
 
-        document
-        .getElementById("fullNameBangla")
-        .value="";
-
-        document
-        .getElementById("fullNameEnglish")
-        .value="";
-
-        document
-        .getElementById("fatherName")
-        .value="";
-
-        document
-        .getElementById("motherName")
-        .value="";
-
-        document
-        .getElementById("dateOfBirth")
-        .value="";
-
-        document
-        .getElementById("nidBirth")
-        .value="";
-
-        document
-        .getElementById("mobileNumber")
-        .value="";
-
-        document
-        .getElementById("gender")
-        .value="";
-
-        document
-        .getElementById("email")
-        .value="";
-
-        document
-        .getElementById("whatsapp")
-        .value="";
-
-        document
-        .getElementById("facebookLink")
-        .value="";
+        document.getElementById("fullNameBangla").value = "";
+        document.getElementById("fullNameEnglish").value = "";
+        document.getElementById("fatherName").value = "";
+        document.getElementById("motherName").value = "";
+        document.getElementById("dateOfBirth").value = "";
+        document.getElementById("nidBirth").value = "";
+        document.getElementById("mobileNumber").value = "";
+        document.getElementById("gender").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("whatsapp").value = "";
+        document.getElementById("facebookLink").value = "";
 
 
-        /* RESET PAGE 2 */
+        /* RESET CURRENT ADDRESS */
 
-        document
-        .getElementById("currentDivision")
-        .value="";
+        document.getElementById("currentDivision").value = "";
 
-        document
-        .getElementById("currentDistrict")
-        .innerHTML=
+        document.getElementById("currentDistrict").innerHTML =
         '<option value="">Select District</option>';
 
-        document
-        .getElementById("currentDistrict")
-        .disabled=true;
+        document.getElementById("currentDistrict").disabled = true;
 
-        document
-        .getElementById("currentUpazila")
-        .innerHTML=
+        document.getElementById("currentUpazila").innerHTML =
         '<option value="">Select Upazila</option>';
 
-        document
-        .getElementById("currentUpazila")
-        .disabled=true;
+        document.getElementById("currentUpazila").disabled = true;
 
-        document
-        .getElementById("currentVillage")
-        .value="";
-
-        document
-        .getElementById("currentAddress")
-        .value="";
+        document.getElementById("currentVillage").value = "";
+        document.getElementById("currentAddress").value = "";
 
 
-        document
-        .getElementById("permanentDivision")
-        .value="";
+        /* RESET PERMANENT ADDRESS */
 
-        document
-        .getElementById("permanentDistrict")
-        .innerHTML=
+        document.getElementById("permanentDivision").value = "";
+
+        document.getElementById("permanentDistrict").innerHTML =
         '<option value="">Select District</option>';
 
-        document
-        .getElementById("permanentDistrict")
-        .disabled=true;
+        document.getElementById("permanentDistrict").disabled = true;
 
-        document
-        .getElementById("permanentUpazila")
-        .innerHTML=
+        document.getElementById("permanentUpazila").innerHTML =
         '<option value="">Select Upazila</option>';
 
-        document
-        .getElementById("permanentUpazila")
-        .disabled=true;
+        document.getElementById("permanentUpazila").disabled = true;
 
-        document
-        .getElementById("permanentVillage")
-        .value="";
-
-        document
-        .getElementById("permanentAddress")
-        .value="";
+        document.getElementById("permanentVillage").value = "";
+        document.getElementById("permanentAddress").value = "";
 
 
-        document
-        .getElementById("lastBloodDonate")
-        .value="";
+        /* RESET BLOOD DONATION */
 
-        document
-        .getElementById("lastBloodDate")
-        .value="";
+        document.getElementById("lastBloodDonate").value = "";
 
-        document
-        .getElementById("lastBloodDate")
-        .style.display="none";
+        document.getElementById("lastBloodDate").value = "";
 
-        document
-        .getElementById("lastBloodDate")
-        .required=false;
+        document.getElementById("lastBloodDate").style.display = "none";
+
+        document.getElementById("lastBloodDate").required = false;
 
 
-        document
-        .getElementById(
-            "physicalComplications"
-        )
-        .value="";
+        /* RESET OTHER FIELDS */
 
-        document
-        .getElementById(
-            "interestedRole"
-        )
-        .value="";
+        document.getElementById("physicalComplications").value = "";
+
+        document.getElementById("interestedRole").value = "";
+
+
+        /* CLEAR MESSAGE */
+
+        document.getElementById("memberMessage").innerHTML = "";
 
 
         /* GO BACK TO PAGE 1 */
@@ -2060,7 +1876,6 @@ window.submitMember=async function(){
         document
         .getElementById("memberStep2")
         .classList.remove("active");
-
 
         document
         .getElementById("memberStep1")
@@ -2070,27 +1885,21 @@ window.submitMember=async function(){
     }
     catch(error){
 
-        console.error(error);
-
-
-        message.innerHTML =
-        "<div class='error'>" +
-        "❌ Registration failed.<br>" +
-        "Please try again." +
-        "</div>";
-
+        console.error(
+            "Member registration error:",
+            error
+        );
 
         alert(
             "❌ Registration failed.\n\n" +
-            error.message
+            "Please check your internet connection and try again."
         );
 
     }
 
 };
 
-
-/* DONOR REGISTRATION */
+/*DONOR REGISTRATION */
 
 document
 .getElementById("donorForm")
