@@ -1768,17 +1768,12 @@ window.submitMember = async function(){
 
 
     /* SAVE TO FIRESTORE */
-
     try{
 
-    alert("A - addDoc এর আগে");
-
-    const docRef = await addDoc(
+    await addDoc(
         collection(db, "members"),
         memberData
     );
-
-    alert("B - Firestore-এ save হয়েছে: " + docRef.id);
 
     alert(
         "✅ Registration Submitted Successfully!\n\n" +
