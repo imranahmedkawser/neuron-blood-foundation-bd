@@ -1323,38 +1323,56 @@ document
 
 /* MEMBER SUBMIT */
 
-window.submitMember=async function(){
+window.submitMember = async function(){
 
-    const step2 =
-    document.getElementById("memberStep2");
+    const step2 = document.getElementById("memberStep2");
 
-    const inputs =
-    step2.querySelectorAll("input,select,textarea");
+    const inputs = step2.querySelectorAll("input, select, textarea");
 
     for(const input of inputs){
 
         if(!input.checkValidity()){
 
             input.reportValidity();
-
             return;
 
         }
 
     }
 
+    const mobile =
+    document.getElementById("mobileNumber").value.trim();
+
+    if(!/^01[0-9]{9}$/.test(mobile)){
+
+        alert("Mobile Number must be 11 digits and start with 01.");
+        return;
+
+    }
+
+    const whatsapp =
+    document.getElementById("whatsapp").value.trim();
+
+    if(
+        whatsapp &&
+        !/^01[0-9]{9}$/.test(whatsapp)
+    ){
+
+        alert("WhatsApp Number must be 11 digits and start with 01.");
+        return;
+
+    }
 
     const lastBlood =
     document.getElementById("lastBloodDonate").value;
 
-    let lastBloodDate="";
+    let lastBloodDate = "";
 
-    if(lastBlood==="No Experience"){
+    if(lastBlood === "No Experience"){
 
-        lastBloodDate="No Experience";
+        lastBloodDate = "No Experience";
 
-    }
-    else{
+    }else{
 
         lastBloodDate =
         document.getElementById("lastBloodDate").value;
@@ -1362,26 +1380,7 @@ window.submitMember=async function(){
     }
 
 
-    const currentDivision =
-    document.getElementById("currentDivision");
-
-    const currentDistrict =
-    document.getElementById("currentDistrict");
-
-    const currentUpazila =
-    document.getElementById("currentUpazila");
-
-    const permanentDivision =
-    document.getElementById("permanentDivision");
-
-    const permanentDistrict =
-    document.getElementById("permanentDistrict");
-
-    const permanentUpazila =
-    document.getElementById("permanentUpazila");
-
-
-    const memberData={
+    const memberData = {
 
         fullNameBangla:
         document.getElementById("fullNameBangla").value.trim(),
@@ -1401,8 +1400,7 @@ window.submitMember=async function(){
         nidBirth:
         document.getElementById("nidBirth").value,
 
-        mobileNumber:
-        document.getElementById("mobileNumber").value.trim(),
+        mobileNumber: mobile,
 
         gender:
         document.getElementById("gender").value,
@@ -1410,23 +1408,21 @@ window.submitMember=async function(){
         email:
         document.getElementById("email").value.trim(),
 
-        whatsapp:
-        document.getElementById("whatsapp").value.trim(),
+        whatsapp: whatsapp,
 
         facebookLink:
         document.getElementById("facebookLink").value.trim(),
 
-
-        currentAddress:{
+        currentAddress: {
 
             division:
-            currentDivision.value,
+            document.getElementById("currentDivision").value,
 
             district:
-            currentDistrict.value,
+            document.getElementById("currentDistrict").value,
 
             upazila:
-            currentUpazila.value,
+            document.getElementById("currentUpazila").value,
 
             villageTown:
             document.getElementById("currentVillage").value.trim(),
@@ -1436,17 +1432,16 @@ window.submitMember=async function(){
 
         },
 
-
-        permanentAddress:{
+        permanentAddress: {
 
             division:
-            permanentDivision.value,
+            document.getElementById("permanentDivision").value,
 
             district:
-            permanentDistrict.value,
+            document.getElementById("permanentDistrict").value,
 
             upazila:
-            permanentUpazila.value,
+            document.getElementById("permanentUpazila").value,
 
             villageTown:
             document.getElementById("permanentVillage").value.trim(),
@@ -1456,24 +1451,22 @@ window.submitMember=async function(){
 
         },
 
-
         lastBloodDonateDate:
         lastBloodDate,
 
         physicalComplications:
         document
         .getElementById("physicalComplications")
-        .value
-        .trim(),
+        .value.trim(),
 
         interestedRole:
         document
         .getElementById("interestedRole")
         .value,
 
-        status:"Pending",
+        status: "Pending",
 
-        type:"Member",
+        type: "Member",
 
         createdAt:
         new Date().toISOString()
@@ -1484,35 +1477,146 @@ window.submitMember=async function(){
     try{
 
         await addDoc(
-            collection(db,"members"),
+            collection(db, "members"),
             memberData
         );
 
+
+        /* SUCCESS MESSAGE */
+
+        alert(
+            "✅ Registration Submitted Successfully!\n\n" +
+            "Your application is now pending for admin approval."
+        );
+
+
+        /* RESET ALL MEMBER FIELDS */
+
+        document
+        .getElementById("fullNameBangla").value = "";
+
+        document
+        .getElementById("fullNameEnglish").value = "";
+
+        document
+        .getElementById("fatherName").value = "";
+
+        document
+        .getElementById("motherName").value = "";
+
+        document
+        .getElementById("dateOfBirth").value = "";
+
+        document
+        .getElementById("nidBirth").value = "";
+
+        document
+        .getElementById("mobileNumber").value = "";
+
+        document
+        .getElementById("gender").value = "";
+
+        document
+        .getElementById("email").value = "";
+
+        document
+        .getElementById("whatsapp").value = "";
+
+        document
+        .getElementById("facebookLink").value = "";
+
+        document
+        .getElementById("currentDivision").value = "";
+
+        document
+        .getElementById("currentDistrict").innerHTML =
+        '<option value="">Select District</option>';
+
+        document
+        .getElementById("currentDistrict").disabled = true;
+
+        document
+        .getElementById("currentUpazila").innerHTML =
+        '<option value="">Select Upazila</option>';
+
+        document
+        .getElementById("currentUpazila").disabled = true;
+
+        document
+        .getElementById("currentVillage").value = "";
+
+        document
+        .getElementById("currentAddress").value = "";
+
+        document
+        .getElementById("permanentDivision").value = "";
+
+        document
+        .getElementById("permanentDistrict").innerHTML =
+        '<option value="">Select District</option>';
+
+        document
+        .getElementById("permanentDistrict").disabled = true;
+
+        document
+        .getElementById("permanentUpazila").innerHTML =
+        '<option value="">Select Upazila</option>';
+
+        document
+        .getElementById("permanentUpazila").disabled = true;
+
+        document
+        .getElementById("permanentVillage").value = "";
+
+        document
+        .getElementById("permanentAddress").value = "";
+
+        document
+        .getElementById("lastBloodDonate").value = "";
+
+        document
+        .getElementById("lastBloodDate").value = "";
+
+        document
+        .getElementById("lastBloodDate").style.display = "none";
+
+        document
+        .getElementById("physicalComplications").value = "";
+
+        document
+        .getElementById("interestedRole").value = "";
+
+
+        /* CLEAR MESSAGE */
+
         document
         .getElementById("memberMessage")
-        .innerHTML =
-        "<div class='success'>Registration Successful! Admin approval pending.</div>";
+        .innerHTML = "";
 
-        setTimeout(()=>{
 
-            location.reload();
+        /* BACK TO PAGE 1 */
 
-        },1500);
+        document
+        .getElementById("memberStep2")
+        .classList.remove("active");
+
+        document
+        .getElementById("memberStep1")
+        .classList.add("active");
 
     }
+
     catch(error){
 
         console.error(error);
 
-        document
-        .getElementById("memberMessage")
-        .innerHTML =
-        "<div class='error'>Registration failed. Please try again.</div>";
+        alert(
+            "❌ Registration failed.\nPlease try again."
+        );
 
     }
 
 };
-
 
 /* DONOR REGISTRATION */
 
