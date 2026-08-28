@@ -1783,18 +1783,19 @@ window.submitMember = async function(){
 
     try{
 
-        await addDoc(
-            collection(db, "members"),
-            memberData
-        );
+    alert("A - addDoc এর আগে");
 
+    const docRef = await addDoc(
+        collection(db, "members"),
+        memberData
+    );
 
-        /* SUCCESS MESSAGE */
+    alert("B - Firestore-এ save হয়েছে: " + docRef.id);
 
-        alert(
-            "✅ Registration Submitted Successfully!\n\n" +
-            "Your application is now pending for admin approval."
-        );
+    alert(
+        "✅ Registration Submitted Successfully!\n\n" +
+        "Your application is now pending for admin approval."
+    );
 
 
         /* RESET PAGE 1 FIELDS */
