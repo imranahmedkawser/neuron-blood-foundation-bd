@@ -236,6 +236,14 @@ textarea{
     color:green;
     font-size:11px;
     margin-top:8px;
+    line-height:1.5;
+}
+
+.member-number{
+    display:inline-block;
+    width:22px;
+    font-weight:bold;
+    color:#d90000;
 }
 
 @media(max-width:700px){
@@ -312,6 +320,8 @@ textarea{
 
 <body>
 
+<!-- NAVBAR -->
+
 <div class="navbar">
 
     <div class="logo">
@@ -319,14 +329,35 @@ textarea{
     </div>
 
     <div class="nav">
-        <a onclick="showPage('home')">Home</a>
-        <a onclick="showPage('donor')">Become a Donor</a>
-        <a onclick="showPage('list')">Donor List</a>
-        <a onclick="showPage('member')">Member Login</a>
-        <a onclick="showPage('admin')">Admin</a>
+
+        <a onclick="showPage('home')">
+            Home
+        </a>
+
+        <a onclick="showPage('donor')">
+            Become a Donor
+        </a>
+
+        <a onclick="showPage('list')">
+            Donor List
+        </a>
+
+        <a onclick="showPage('memberList')">
+            Member List
+        </a>
+
+        <a onclick="showPage('member')">
+            Member Login
+        </a>
+
+        <a onclick="showPage('admin')">
+            Admin
+        </a>
+
     </div>
 
 </div>
+
 
 <div class="main">
 
@@ -342,7 +373,9 @@ textarea{
 
     </div>
 
+
     <div style="width:420px;max-width:100%;">
+
 
         <!-- MEMBER REGISTRATION -->
 
@@ -354,9 +387,12 @@ textarea{
                     ❤️ Member Registration
                 </h2>
 
+
                 <!-- PAGE 1 -->
 
-                <div id="memberStep1" class="member-step active">
+                <div id="memberStep1"
+                     class="member-step active">
+
 
                     <div class="question">
                         Full Name (Bangla)*
@@ -367,6 +403,7 @@ textarea{
                         id="fullNameBangla"
                         required>
 
+
                     <div class="question">
                         Full Name (English)*
                     </div>
@@ -375,6 +412,7 @@ textarea{
                         type="text"
                         id="fullNameEnglish"
                         required>
+
 
                     <div class="question">
                         Father's Name*
@@ -385,6 +423,7 @@ textarea{
                         id="fatherName"
                         required>
 
+
                     <div class="question">
                         Mother's Name*
                     </div>
@@ -393,6 +432,7 @@ textarea{
                         type="text"
                         id="motherName"
                         required>
+
 
                     <div class="question">
                         Date of Birth*
@@ -403,6 +443,7 @@ textarea{
                         id="dateOfBirth"
                         required>
 
+
                     <div class="question">
                         NID or Birth Certificate Number*
                     </div>
@@ -411,6 +452,7 @@ textarea{
                         type="number"
                         id="nidBirth"
                         required>
+
 
                     <div class="question">
                         Mobile Number*
@@ -422,6 +464,7 @@ textarea{
                         placeholder="01XXXXXXXXX"
                         maxlength="11"
                         required>
+
 
                     <div class="question">
                         Gender*
@@ -443,6 +486,7 @@ textarea{
 
                     </select>
 
+
                     <div class="question">
                         Email*
                     </div>
@@ -451,6 +495,7 @@ textarea{
                         type="email"
                         id="email"
                         required>
+
 
                     <div class="question">
                         WhatsApp Number
@@ -462,6 +507,7 @@ textarea{
                         placeholder="01XXXXXXXXX"
                         maxlength="11">
 
+
                     <div class="question">
                         Facebook ID Link
                     </div>
@@ -470,6 +516,7 @@ textarea{
                         type="url"
                         id="facebookLink"
                         placeholder="https://facebook.com/...">
+
 
                     <div class="step-buttons">
 
@@ -498,35 +545,61 @@ textarea{
 
                 <!-- PAGE 2 -->
 
-                <div id="memberStep2" class="member-step">
+                <div id="memberStep2"
+                     class="member-step">
+
 
                     <div class="section-title">
                         Current Address
                     </div>
 
+
                     <div class="question">
                         Division*
                     </div>
 
-                    <select id="currentDivision" required>
-                        <option value="">Select Division</option>
+                    <select
+                        id="currentDivision"
+                        required>
+
+                        <option value="">
+                            Select Division
+                        </option>
+
                     </select>
+
 
                     <div class="question">
                         District*
                     </div>
 
-                    <select id="currentDistrict" required disabled>
-                        <option value="">Select District</option>
+                    <select
+                        id="currentDistrict"
+                        required
+                        disabled>
+
+                        <option value="">
+                            Select District
+                        </option>
+
                     </select>
+
 
                     <div class="question">
                         Upazila*
                     </div>
 
-                    <select id="currentUpazila" required disabled>
-                        <option value="">Select Upazila</option>
+                    <select
+                        id="currentUpazila"
+                        required
+                        disabled>
+
+                        <option value="">
+                            Select Upazila
+                        </option>
+
                     </select>
+
 
                     <div class="question">
                         Village/Town*
@@ -536,6 +609,7 @@ textarea{
                         type="text"
                         id="currentVillage"
                         required>
+
 
                     <div class="question">
                         Address*
@@ -550,29 +624,53 @@ textarea{
                         Permanent Address
                     </div>
 
+
                     <div class="question">
                         Division*
                     </div>
 
-                    <select id="permanentDivision" required>
-                        <option value="">Select Division</option>
+                    <select
+                        id="permanentDivision"
+                        required>
+
+                        <option value="">
+                            Select Division
+                        </option>
+
                     </select>
+
 
                     <div class="question">
                         District*
                     </div>
 
-                    <select id="permanentDistrict" required disabled>
-                        <option value="">Select District</option>
+                    <select
+                        id="permanentDistrict"
+                        required
+                        disabled>
+
+                        <option value="">
+                            Select District
+                        </option>
+
                     </select>
+
 
                     <div class="question">
                         Upazila*
                     </div>
 
-                    <select id="permanentUpazila" required disabled>
-                        <option value="">Select Upazila</option>
+                    <select
+                        id="permanentUpazila"
+                        required
+                        disabled>
+
+                        <option value="">
+                            Select Upazila
+                        </option>
+
                     </select>
+
 
                     <div class="question">
                         Village/Town*
@@ -582,6 +680,7 @@ textarea{
                         type="text"
                         id="permanentVillage"
                         required>
+
 
                     <div class="question">
                         Address*
@@ -596,7 +695,9 @@ textarea{
                         Last Blood Donate Date*
                     </div>
 
-                    <select id="lastBloodDonate" required>
+                    <select
+                        id="lastBloodDonate"
+                        required>
 
                         <option value="">
                             Select
@@ -611,6 +712,7 @@ textarea{
                         </option>
 
                     </select>
+
 
                     <input
                         type="date"
@@ -632,7 +734,9 @@ textarea{
                         Interested Role*
                     </div>
 
-                    <select id="interestedRole" required>
+                    <select
+                        id="interestedRole"
+                        required>
 
                         <option value="">
                             Select Role
@@ -682,16 +786,19 @@ textarea{
 
                             Back
 
+                        </button>
+
                         <button
-    type="button"
-    class="btn green-btn"
-    onclick="submitMember()">
+                            type="button"
+                            class="btn green-btn"
+                            onclick="submitMember()">
 
-    Submit
+                            Submit
 
-</button>
-                        
+                        </button>
+
                     </div>
+
 
                     <div id="memberMessage"></div>
 
@@ -714,6 +821,7 @@ textarea{
 
                 <form id="donorForm">
 
+
                     <div class="question">
                         1. *আপনার নাম*
                     </div>
@@ -723,6 +831,7 @@ textarea{
                         id="donorName"
                         placeholder="আপনার নাম"
                         required>
+
 
                     <div class="question">
                         2. *মোবাইল নাম্বার*
@@ -734,12 +843,19 @@ textarea{
                         placeholder="01XXXXXXXXX"
                         required>
 
+
                     <div class="question">
                         3. *রক্তের গ্রুপ*
                     </div>
 
-                    <select id="donorBlood" required>
-                        <option value="">Select</option>
+                    <select
+                        id="donorBlood"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
                         <option>A+</option>
                         <option>A-</option>
                         <option>B+</option>
@@ -748,7 +864,9 @@ textarea{
                         <option>O-</option>
                         <option>AB+</option>
                         <option>AB-</option>
+
                     </select>
+
 
                     <div class="question">
                         4. *বয়স*
@@ -760,6 +878,7 @@ textarea{
                         placeholder="বয়স"
                         required>
 
+
                     <div class="question">
                         5. *ওজন*
                     </div>
@@ -770,6 +889,7 @@ textarea{
                         placeholder="kg এ লিখুন"
                         required>
 
+
                     <div class="question">
                         6. *সর্বশেষ রক্তদানের তারিখ*
                     </div>
@@ -779,12 +899,19 @@ textarea{
                         id="lastDonation"
                         required>
 
+
                     <div class="question">
                         7. *বিভাগ*
                     </div>
 
-                    <select id="division" required>
-                        <option value="">Select</option>
+                    <select
+                        id="division"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
                         <option>ঢাকা</option>
                         <option>চট্টগ্রাম</option>
                         <option>রাজশাহী</option>
@@ -793,7 +920,9 @@ textarea{
                         <option>সিলেট</option>
                         <option>রংপুর</option>
                         <option>ময়মনসিংহ</option>
+
                     </select>
+
 
                     <div class="question">
                         8. *জেলা*
@@ -805,6 +934,7 @@ textarea{
                         placeholder="জেলা"
                         required>
 
+
                     <div class="question">
                         9. *উপজেলা/থানা*
                     </div>
@@ -815,6 +945,7 @@ textarea{
                         placeholder="উপজেলা/থানা"
                         required>
 
+
                     <div class="question">
                         10. *সম্পূর্ণ ঠিকানা*
                     </div>
@@ -824,6 +955,7 @@ textarea{
                         placeholder="সম্পূর্ণ ঠিকানা"
                         required></textarea>
 
+
                     <button
                         class="btn green-btn"
                         type="submit">
@@ -831,6 +963,7 @@ textarea{
                         Donor হিসেবে নিবন্ধন করুন
 
                     </button>
+
 
                     <button
                         type="button"
@@ -859,6 +992,25 @@ textarea{
                 </h2>
 
                 <div id="donorList">
+                    Loading...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBER LIST -->
+
+        <div id="memberList" class="page">
+
+            <div class="card">
+
+                <h2 class="red">
+                    👥 Approved Member List
+                </h2>
+
+                <div id="memberListData">
                     Loading...
                 </div>
 
@@ -915,6 +1067,7 @@ textarea{
                     id="adminPassword"
                     placeholder="Admin Password">
 
+
                 <button
                     class="btn"
                     onclick="adminLogin()">
@@ -923,14 +1076,19 @@ textarea{
 
                 </button>
 
+
                 <div id="adminMessage"></div>
+
 
                 <div
                     id="adminPanel"
                     style="display:none;margin-top:20px;">
 
-                    <h3 style="font-size:13px;margin-bottom:10px;">
-                        Pending Donors
+                    <h3
+                        style="font-size:13px;margin-bottom:10px;">
+
+                        Pending Members
+
                     </h3>
 
                     <div id="pendingList">
@@ -950,9 +1108,14 @@ textarea{
 
 <script type="module">
 
+
+/* FIREBASE IMPORT */
+
 import {
     initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
     getFirestore,
@@ -961,14 +1124,16 @@ import {
     onSnapshot,
     updateDoc,
     doc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-/* FIREBASE */
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
-    apiKey:"AIzaSyDdV-UefFIjoPsGnJqPoJBGVPcB7Fb530",
+    apiKey:
+    "AIzaSyDdV-UefFIjoPsGnJqPoJBGVPcB7Fb530",
 
     authDomain:
     "neuron-blood-foundation-bd.firebaseapp.com",
@@ -987,86 +1152,123 @@ const firebaseConfig = {
 
 };
 
-const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
 
 
 /* PAGE CHANGE */
 
-window.showPage = function(page){
+window.showPage=function(page){
 
     document
     .querySelectorAll(".page")
     .forEach(p=>{
+
         p.classList.remove("active");
+
     });
 
-    document
-    .getElementById(page)
-    .classList.add("active");
+
+    const selected =
+    document.getElementById(page);
+
+    if(selected){
+
+        selected.classList.add("active");
+
+    }
+
 
     if(page==="list"){
+
         loadDonors();
+
+    }
+
+
+    if(page==="memberList"){
+
+        loadMembers();
+
     }
 
 };
 
 
-/* MEMBER STEP */
+/* MEMBER PAGE 1 → PAGE 2 */
 
 window.nextMemberStep=function(){
 
     const step1 =
     document.getElementById("memberStep1");
 
+
     const inputs =
-    step1.querySelectorAll("input,select");
+    step1.querySelectorAll(
+        "input,select"
+    );
 
-    let valid=true;
 
-    inputs.forEach(input=>{
+    for(const input of inputs){
 
         if(!input.checkValidity()){
 
             input.reportValidity();
 
-            valid=false;
+            return;
 
         }
 
-    });
+    }
 
-    if(!valid) return;
 
     const mobile =
-    document.getElementById("mobileNumber").value;
+    document
+    .getElementById("mobileNumber")
+    .value
+    .trim();
+
 
     if(!/^01[0-9]{9}$/.test(mobile)){
 
-        alert("Mobile Number must be 11 digits and start with 01.");
+        alert(
+            "Mobile Number must be 11 digits and start with 01."
+        );
 
         return;
 
     }
 
+
     const whatsapp =
-    document.getElementById("whatsapp").value;
+    document
+    .getElementById("whatsapp")
+    .value
+    .trim();
+
 
     if(
         whatsapp &&
         !/^01[0-9]{9}$/.test(whatsapp)
     ){
 
-        alert("WhatsApp Number must be 11 digits and start with 01.");
+        alert(
+            "WhatsApp Number must be 11 digits and start with 01."
+        );
 
         return;
 
     }
 
+
     document
     .getElementById("memberStep1")
     .classList.remove("active");
+
 
     document
     .getElementById("memberStep2")
@@ -1074,6 +1276,8 @@ window.nextMemberStep=function(){
 
 };
 
+
+/* PAGE 2 → PAGE 1 */
 
 window.previousMemberStep=function(){
 
@@ -1081,6 +1285,7 @@ window.previousMemberStep=function(){
     .getElementById("memberStep2")
     .classList.remove("active");
 
+
     document
     .getElementById("memberStep1")
     .classList.add("active");
@@ -1088,12 +1293,14 @@ window.previousMemberStep=function(){
 };
 
 
-/* BANGLADESH LOCATION DATA */
+/* BANGLADESH LOCATION */
 
 const geoURL =
 "https://iqbalhasandev.github.io/bangladesh-geo-json/bangladesh-geo.json";
 
+
 let bdData=[];
+
 
 async function loadBangladeshData(){
 
@@ -1102,8 +1309,10 @@ async function loadBangladeshData(){
         const response =
         await fetch(geoURL);
 
+
         bdData =
         await response.json();
+
 
         fillDivisions();
 
@@ -1124,24 +1333,33 @@ async function loadBangladeshData(){
 function fillDivisions(){
 
     const current =
-    document.getElementById("currentDivision");
+    document.getElementById(
+        "currentDivision"
+    );
+
 
     const permanent =
-    document.getElementById("permanentDivision");
+    document.getElementById(
+        "permanentDivision"
+    );
+
 
     bdData.forEach(division=>{
 
         const option1 =
         document.createElement("option");
 
+
         option1.value =
         division.name;
 
+
         option1.textContent =
-        division.bn_name +
+        division.bn_name+
         " ("+
         division.name+
         ")";
+
 
         current.appendChild(option1);
 
@@ -1149,14 +1367,17 @@ function fillDivisions(){
         const option2 =
         document.createElement("option");
 
+
         option2.value =
         division.name;
 
+
         option2.textContent =
-        division.bn_name +
+        division.bn_name+
         " ("+
         division.name+
         ")";
+
 
         permanent.appendChild(option2);
 
@@ -1165,6 +1386,8 @@ function fillDivisions(){
 }
 
 
+/* ADDRESS DROPDOWN */
+
 function setupAddress(
     divisionId,
     districtId,
@@ -1172,13 +1395,21 @@ function setupAddress(
 ){
 
     const division =
-    document.getElementById(divisionId);
+    document.getElementById(
+        divisionId
+    );
+
 
     const district =
-    document.getElementById(districtId);
+    document.getElementById(
+        districtId
+    );
+
 
     const upazila =
-    document.getElementById(upazilaId);
+    document.getElementById(
+        upazilaId
+    );
 
 
     division.addEventListener(
@@ -1188,25 +1419,40 @@ function setupAddress(
             district.innerHTML =
             '<option value="">Select District</option>';
 
+
             upazila.innerHTML =
             '<option value="">Select Upazila</option>';
 
+
             district.disabled=true;
+
             upazila.disabled=true;
+
 
             const selected =
             bdData.find(
                 d=>d.name===this.value
             );
 
-            if(!selected) return;
+
+            if(!selected){
+
+                return;
+
+            }
+
 
             selected.districts.forEach(d=>{
 
                 const option =
-                document.createElement("option");
+                document.createElement(
+                    "option"
+                );
 
-                option.value=d.name;
+
+                option.value =
+                d.name;
+
 
                 option.textContent =
                 d.bn_name+
@@ -1214,9 +1460,13 @@ function setupAddress(
                 d.name+
                 ")";
 
-                district.appendChild(option);
+
+                district.appendChild(
+                    option
+                );
 
             });
+
 
             district.disabled=false;
 
@@ -1231,28 +1481,47 @@ function setupAddress(
             upazila.innerHTML =
             '<option value="">Select Upazila</option>';
 
+
             upazila.disabled=true;
+
 
             const selectedDivision =
             bdData.find(
                 d=>d.name===division.value
             );
 
-            if(!selectedDivision) return;
+
+            if(!selectedDivision){
+
+                return;
+
+            }
+
 
             const selectedDistrict =
             selectedDivision.districts.find(
                 d=>d.name===this.value
             );
 
-            if(!selectedDistrict) return;
+
+            if(!selectedDistrict){
+
+                return;
+
+            }
+
 
             selectedDistrict.upazilas.forEach(u=>{
 
                 const option =
-                document.createElement("option");
+                document.createElement(
+                    "option"
+                );
 
-                option.value=u.name;
+
+                option.value =
+                u.name;
+
 
                 option.textContent =
                 u.bn_name+
@@ -1260,9 +1529,13 @@ function setupAddress(
                 u.name+
                 ")";
 
-                upazila.appendChild(option);
+
+                upazila.appendChild(
+                    option
+                );
 
             });
+
 
             upazila.disabled=false;
 
@@ -1278,16 +1551,18 @@ setupAddress(
     "currentUpazila"
 );
 
+
 setupAddress(
     "permanentDivision",
     "permanentDistrict",
     "permanentUpazila"
 );
 
+
 loadBangladeshData();
 
 
-/* LAST BLOOD DONATE DATE */
+/* LAST BLOOD DONATION */
 
 document
 .getElementById("lastBloodDonate")
@@ -1296,7 +1571,10 @@ document
     function(){
 
         const date =
-        document.getElementById("lastBloodDate");
+        document.getElementById(
+            "lastBloodDate"
+        );
+
 
         if(this.value==="date"){
 
@@ -1321,150 +1599,278 @@ document
 
 /* MEMBER SUBMIT */
 
-window.submitMember = async function(){
+window.submitMember=async function(){
 
-    const step2 = document.getElementById("memberStep2");
+    const step2 =
+    document.getElementById(
+        "memberStep2"
+    );
 
-    const inputs = step2.querySelectorAll("input, select, textarea");
+
+    const inputs =
+    step2.querySelectorAll(
+        "input,select,textarea"
+    );
+
 
     for(const input of inputs){
 
         if(!input.checkValidity()){
 
             input.reportValidity();
+
             return;
 
         }
 
     }
 
+
     const mobile =
-    document.getElementById("mobileNumber").value.trim();
+    document
+    .getElementById("mobileNumber")
+    .value
+    .trim();
+
 
     if(!/^01[0-9]{9}$/.test(mobile)){
 
-        alert("Mobile Number must be 11 digits and start with 01.");
+        alert(
+            "Mobile Number must be 11 digits and start with 01."
+        );
+
         return;
 
     }
 
+
     const whatsapp =
-    document.getElementById("whatsapp").value.trim();
+    document
+    .getElementById("whatsapp")
+    .value
+    .trim();
+
 
     if(
         whatsapp &&
         !/^01[0-9]{9}$/.test(whatsapp)
     ){
 
-        alert("WhatsApp Number must be 11 digits and start with 01.");
+        alert(
+            "WhatsApp Number must be 11 digits and start with 01."
+        );
+
         return;
 
     }
 
+
     const lastBlood =
-    document.getElementById("lastBloodDonate").value;
+    document
+    .getElementById("lastBloodDonate")
+    .value;
 
-    let lastBloodDate = "";
 
-    if(lastBlood === "No Experience"){
+    let lastBloodDate="";
 
-        lastBloodDate = "No Experience";
 
-    }else{
+    if(lastBlood==="No Experience"){
 
         lastBloodDate =
-        document.getElementById("lastBloodDate").value;
+        "No Experience";
+
+    }
+    else{
+
+        lastBloodDate =
+        document
+        .getElementById("lastBloodDate")
+        .value;
 
     }
 
 
-    const memberData = {
+    if(
+        lastBlood==="date" &&
+        !lastBloodDate
+    ){
+
+        alert(
+            "Please select last blood donation date."
+        );
+
+        return;
+
+    }
+
+
+    const memberData={
 
         fullNameBangla:
-        document.getElementById("fullNameBangla").value.trim(),
+        document
+        .getElementById("fullNameBangla")
+        .value
+        .trim(),
 
         fullNameEnglish:
-        document.getElementById("fullNameEnglish").value.trim(),
+        document
+        .getElementById("fullNameEnglish")
+        .value
+        .trim(),
 
         fatherName:
-        document.getElementById("fatherName").value.trim(),
+        document
+        .getElementById("fatherName")
+        .value
+        .trim(),
 
         motherName:
-        document.getElementById("motherName").value.trim(),
+        document
+        .getElementById("motherName")
+        .value
+        .trim(),
 
         dateOfBirth:
-        document.getElementById("dateOfBirth").value,
+        document
+        .getElementById("dateOfBirth")
+        .value,
 
         nidBirth:
-        document.getElementById("nidBirth").value,
+        document
+        .getElementById("nidBirth")
+        .value,
 
-        mobileNumber: mobile,
+        mobileNumber:
+        mobile,
 
         gender:
-        document.getElementById("gender").value,
+        document
+        .getElementById("gender")
+        .value,
 
         email:
-        document.getElementById("email").value.trim(),
+        document
+        .getElementById("email")
+        .value
+        .trim(),
 
-        whatsapp: whatsapp,
+        whatsapp:
+        whatsapp,
 
         facebookLink:
-        document.getElementById("facebookLink").value.trim(),
+        document
+        .getElementById("facebookLink")
+        .value
+        .trim(),
 
-        currentAddress: {
+
+        currentAddress:{
 
             division:
-            document.getElementById("currentDivision").value,
+            document
+            .getElementById(
+                "currentDivision"
+            )
+            .value,
 
             district:
-            document.getElementById("currentDistrict").value,
+            document
+            .getElementById(
+                "currentDistrict"
+            )
+            .value,
 
             upazila:
-            document.getElementById("currentUpazila").value,
+            document
+            .getElementById(
+                "currentUpazila"
+            )
+            .value,
 
             villageTown:
-            document.getElementById("currentVillage").value.trim(),
+            document
+            .getElementById(
+                "currentVillage"
+            )
+            .value
+            .trim(),
 
             address:
-            document.getElementById("currentAddress").value.trim()
+            document
+            .getElementById(
+                "currentAddress"
+            )
+            .value
+            .trim()
 
         },
 
-        permanentAddress: {
+
+        permanentAddress:{
 
             division:
-            document.getElementById("permanentDivision").value,
+            document
+            .getElementById(
+                "permanentDivision"
+            )
+            .value,
 
             district:
-            document.getElementById("permanentDistrict").value,
+            document
+            .getElementById(
+                "permanentDistrict"
+            )
+            .value,
 
             upazila:
-            document.getElementById("permanentUpazila").value,
+            document
+            .getElementById(
+                "permanentUpazila"
+            )
+            .value,
 
             villageTown:
-            document.getElementById("permanentVillage").value.trim(),
+            document
+            .getElementById(
+                "permanentVillage"
+            )
+            .value
+            .trim(),
 
             address:
-            document.getElementById("permanentAddress").value.trim()
+            document
+            .getElementById(
+                "permanentAddress"
+            )
+            .value
+            .trim()
 
         },
+
 
         lastBloodDonateDate:
         lastBloodDate,
 
         physicalComplications:
         document
-        .getElementById("physicalComplications")
-        .value.trim(),
+        .getElementById(
+            "physicalComplications"
+        )
+        .value
+        .trim(),
 
         interestedRole:
         document
-        .getElementById("interestedRole")
+        .getElementById(
+            "interestedRole"
+        )
         .value,
 
-        status: "Pending",
+        status:
+        "Pending",
 
-        type: "Member",
+        type:
+        "Member",
 
         createdAt:
         new Date().toISOString()
@@ -1472,15 +1878,35 @@ window.submitMember = async function(){
     };
 
 
+    const message =
+    document.getElementById(
+        "memberMessage"
+    );
+
+
     try{
 
+        message.innerHTML =
+        "<div class='success'>Submitting...</div>";
+
+
         await addDoc(
-            collection(db, "members"),
+            collection(
+                db,
+                "members"
+            ),
             memberData
         );
 
 
-        /* SUCCESS MESSAGE */
+        /* SUCCESS */
+
+        message.innerHTML =
+        "<div class='success'>" +
+        "✅ Registration Submitted Successfully!<br>" +
+        "Your application is now pending for admin approval." +
+        "</div>";
+
 
         alert(
             "✅ Registration Submitted Successfully!\n\n" +
@@ -1488,204 +1914,307 @@ window.submitMember = async function(){
         );
 
 
-        /* RESET ALL MEMBER FIELDS */
+        /* RESET PAGE 1 */
 
         document
-        .getElementById("fullNameBangla").value = "";
+        .getElementById("fullNameBangla")
+        .value="";
 
         document
-        .getElementById("fullNameEnglish").value = "";
+        .getElementById("fullNameEnglish")
+        .value="";
 
         document
-        .getElementById("fatherName").value = "";
+        .getElementById("fatherName")
+        .value="";
 
         document
-        .getElementById("motherName").value = "";
+        .getElementById("motherName")
+        .value="";
 
         document
-        .getElementById("dateOfBirth").value = "";
+        .getElementById("dateOfBirth")
+        .value="";
 
         document
-        .getElementById("nidBirth").value = "";
+        .getElementById("nidBirth")
+        .value="";
 
         document
-        .getElementById("mobileNumber").value = "";
+        .getElementById("mobileNumber")
+        .value="";
 
         document
-        .getElementById("gender").value = "";
+        .getElementById("gender")
+        .value="";
 
         document
-        .getElementById("email").value = "";
+        .getElementById("email")
+        .value="";
 
         document
-        .getElementById("whatsapp").value = "";
+        .getElementById("whatsapp")
+        .value="";
 
         document
-        .getElementById("facebookLink").value = "";
+        .getElementById("facebookLink")
+        .value="";
+
+
+        /* RESET PAGE 2 */
 
         document
-        .getElementById("currentDivision").value = "";
+        .getElementById("currentDivision")
+        .value="";
 
         document
-        .getElementById("currentDistrict").innerHTML =
+        .getElementById("currentDistrict")
+        .innerHTML=
         '<option value="">Select District</option>';
 
         document
-        .getElementById("currentDistrict").disabled = true;
+        .getElementById("currentDistrict")
+        .disabled=true;
 
         document
-        .getElementById("currentUpazila").innerHTML =
+        .getElementById("currentUpazila")
+        .innerHTML=
         '<option value="">Select Upazila</option>';
 
         document
-        .getElementById("currentUpazila").disabled = true;
+        .getElementById("currentUpazila")
+        .disabled=true;
 
         document
-        .getElementById("currentVillage").value = "";
+        .getElementById("currentVillage")
+        .value="";
 
         document
-        .getElementById("currentAddress").value = "";
+        .getElementById("currentAddress")
+        .value="";
+
 
         document
-        .getElementById("permanentDivision").value = "";
+        .getElementById("permanentDivision")
+        .value="";
 
         document
-        .getElementById("permanentDistrict").innerHTML =
+        .getElementById("permanentDistrict")
+        .innerHTML=
         '<option value="">Select District</option>';
 
         document
-        .getElementById("permanentDistrict").disabled = true;
+        .getElementById("permanentDistrict")
+        .disabled=true;
 
         document
-        .getElementById("permanentUpazila").innerHTML =
+        .getElementById("permanentUpazila")
+        .innerHTML=
         '<option value="">Select Upazila</option>';
 
         document
-        .getElementById("permanentUpazila").disabled = true;
+        .getElementById("permanentUpazila")
+        .disabled=true;
 
         document
-        .getElementById("permanentVillage").value = "";
+        .getElementById("permanentVillage")
+        .value="";
 
         document
-        .getElementById("permanentAddress").value = "";
+        .getElementById("permanentAddress")
+        .value="";
+
 
         document
-        .getElementById("lastBloodDonate").value = "";
+        .getElementById("lastBloodDonate")
+        .value="";
 
         document
-        .getElementById("lastBloodDate").value = "";
+        .getElementById("lastBloodDate")
+        .value="";
 
         document
-        .getElementById("lastBloodDate").style.display = "none";
+        .getElementById("lastBloodDate")
+        .style.display="none";
 
         document
-        .getElementById("physicalComplications").value = "";
+        .getElementById("lastBloodDate")
+        .required=false;
+
 
         document
-        .getElementById("interestedRole").value = "";
-
-
-        /* CLEAR MESSAGE */
+        .getElementById(
+            "physicalComplications"
+        )
+        .value="";
 
         document
-        .getElementById("memberMessage")
-        .innerHTML = "";
+        .getElementById(
+            "interestedRole"
+        )
+        .value="";
 
 
-        /* BACK TO PAGE 1 */
+        /* GO BACK TO PAGE 1 */
 
         document
         .getElementById("memberStep2")
         .classList.remove("active");
 
+
         document
         .getElementById("memberStep1")
         .classList.add("active");
 
-    }
 
+    }
     catch(error){
 
         console.error(error);
 
+
+        message.innerHTML =
+        "<div class='error'>" +
+        "❌ Registration failed.<br>" +
+        "Please try again." +
+        "</div>";
+
+
         alert(
-            "❌ Registration failed.\nPlease try again."
+            "❌ Registration failed.\n\n" +
+            error.message
         );
 
     }
 
 };
 
+
 /* DONOR REGISTRATION */
 
 document
 .getElementById("donorForm")
-.addEventListener("submit",async function(e){
+.addEventListener(
+    "submit",
+    async function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    try{
 
-        await addDoc(
-            collection(db,"donors"),
-            {
+        try{
 
-                name:
-                document.getElementById("donorName").value,
+            await addDoc(
+                collection(
+                    db,
+                    "donors"
+                ),
+                {
 
-                phone:
-                document.getElementById("donorPhone").value,
+                    name:
+                    document
+                    .getElementById(
+                        "donorName"
+                    )
+                    .value,
 
-                blood:
-                document.getElementById("donorBlood").value,
+                    phone:
+                    document
+                    .getElementById(
+                        "donorPhone"
+                    )
+                    .value,
 
-                age:
-                document.getElementById("donorAge").value,
+                    blood:
+                    document
+                    .getElementById(
+                        "donorBlood"
+                    )
+                    .value,
 
-                weight:
-                document.getElementById("donorWeight").value,
+                    age:
+                    document
+                    .getElementById(
+                        "donorAge"
+                    )
+                    .value,
 
-                lastDonation:
-                document.getElementById("lastDonation").value,
+                    weight:
+                    document
+                    .getElementById(
+                        "donorWeight"
+                    )
+                    .value,
 
-                division:
-                document.getElementById("division").value,
+                    lastDonation:
+                    document
+                    .getElementById(
+                        "lastDonation"
+                    )
+                    .value,
 
-                district:
-                document.getElementById("district").value,
+                    division:
+                    document
+                    .getElementById(
+                        "division"
+                    )
+                    .value,
 
-                upazila:
-                document.getElementById("upazila").value,
+                    district:
+                    document
+                    .getElementById(
+                        "district"
+                    )
+                    .value,
 
-                address:
-                document.getElementById("address").value,
+                    upazila:
+                    document
+                    .getElementById(
+                        "upazila"
+                    )
+                    .value,
 
-                status:"Pending",
+                    address:
+                    document
+                    .getElementById(
+                        "address"
+                    )
+                    .value,
 
-                type:"Donor",
+                    status:
+                    "Pending",
 
-                createdAt:
-                new Date().toISOString()
+                    type:
+                    "Donor",
 
-            }
-        );
+                    createdAt:
+                    new Date().toISOString()
 
-        alert(
-            "Donor registration successful!\nAdmin approval pending."
-        );
+                }
+            );
 
-        this.reset();
+
+            alert(
+                "Donor registration successful!\n" +
+                "Admin approval pending."
+            );
+
+
+            this.reset();
+
+        }
+        catch(error){
+
+            console.error(error);
+
+            alert(
+                "Registration failed.\n\n" +
+                error.message
+            );
+
+        }
 
     }
-    catch(error){
-
-        console.error(error);
-
-        alert("Registration failed.");
-
-    }
-
-});
+);
 
 
 /* DONOR LIST */
@@ -1693,59 +2222,250 @@ document
 function loadDonors(){
 
     const list =
-    document.getElementById("donorList");
+    document.getElementById(
+        "donorList"
+    );
+
 
     list.innerHTML="Loading...";
 
+
     onSnapshot(
-        collection(db,"donors"),
+        collection(
+            db,
+            "donors"
+        ),
         snapshot=>{
 
             list.innerHTML="";
 
-            let found=false;
+
+            let donors=[];
+
 
             snapshot.forEach(item=>{
 
-                const data=item.data();
+                const data =
+                item.data();
 
-                if(data.status==="Approved"){
 
-                    found=true;
+                if(
+                    data.status==="Approved"
+                ){
 
-                    const div=
-                    document.createElement("div");
-
-                    div.className="donor";
-
-                    div.innerHTML=
-
-                    "<strong>🩸 "+
-                    safe(data.name)+
-                    "</strong><br>"+
-                    "Blood: "+
-                    safe(data.blood)+
-                    "<br>"+
-                    "Location: "+
-                    safe(data.district)+
-                    ", "+
-                    safe(data.division)+
-                    "<br>"+
-                    "Phone: "+
-                    safe(data.phone);
-
-                    list.appendChild(div);
+                    donors.push(data);
 
                 }
 
             });
 
-            if(!found){
 
-                list.innerHTML=
+            donors.sort(
+                (a,b)=>
+                String(
+                    a.name || ""
+                )
+                .toLowerCase()
+                .localeCompare(
+                    String(
+                        b.name || ""
+                    )
+                    .toLowerCase()
+                )
+            );
+
+
+            if(
+                donors.length===0
+            ){
+
+                list.innerHTML =
                 "No approved donors found.";
 
+                return;
+
             }
+
+
+            donors.forEach(
+                (data,index)=>{
+
+                    const div =
+                    document
+                    .createElement(
+                        "div"
+                    );
+
+
+                    div.className =
+                    "donor";
+
+
+                    div.innerHTML =
+
+                    "<strong>" +
+                    (index+1) +
+                    ". 🩸 " +
+                    safe(data.name) +
+                    "</strong><br>" +
+
+                    "Blood: " +
+                    safe(data.blood) +
+                    "<br>" +
+
+                    "Location: " +
+                    safe(data.district) +
+                    ", " +
+                    safe(data.division) +
+                    "<br>" +
+
+                    "Phone: " +
+                    safe(data.phone);
+
+
+                    list.appendChild(div);
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* MEMBER LIST */
+
+function loadMembers(){
+
+    const list =
+    document.getElementById(
+        "memberListData"
+    );
+
+
+    list.innerHTML =
+    "Loading...";
+
+
+    onSnapshot(
+        collection(
+            db,
+            "members"
+        ),
+        snapshot=>{
+
+            list.innerHTML="";
+
+
+            let members=[];
+
+
+            snapshot.forEach(item=>{
+
+                const data =
+                item.data();
+
+
+                if(
+                    data.status==="Approved"
+                ){
+
+                    members.push(data);
+
+                }
+
+            });
+
+
+            /* A-Z SORT */
+
+            members.sort(
+                (a,b)=>{
+
+                    const nameA =
+                    String(
+                        a.fullNameEnglish ||
+                        a.fullNameBangla ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .trim();
+
+
+                    const nameB =
+                    String(
+                        b.fullNameEnglish ||
+                        b.fullNameBangla ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .trim();
+
+
+                    return nameA.localeCompare(
+                        nameB
+                    );
+
+                }
+            );
+
+
+            if(
+                members.length===0
+            ){
+
+                list.innerHTML =
+                "No approved members found.";
+
+                return;
+
+            }
+
+
+            /* DISPLAY */
+
+            members.forEach(
+                (data,index)=>{
+
+                    const div =
+                    document
+                    .createElement(
+                        "div"
+                    );
+
+
+                    div.className =
+                    "donor";
+
+
+                    div.innerHTML =
+
+                    "<strong>" +
+                    (index+1) +
+                    ". 👤 " +
+                    safe(
+                        data.fullNameEnglish ||
+                        data.fullNameBangla
+                    ) +
+                    "</strong><br>" +
+
+                    "Role: " +
+                    safe(
+                        data.interestedRole
+                    ) +
+                    "<br>" +
+
+                    "Mobile: " +
+                    safe(
+                        data.mobileNumber
+                    );
+
+
+                    list.appendChild(div);
+
+                }
+            );
 
         }
     );
@@ -1755,99 +2475,164 @@ function loadDonors(){
 
 /* ADMIN LOGIN */
 
-const ADMIN_PASSWORD="neuron123";
+const ADMIN_PASSWORD =
+"neuron123";
+
 
 window.adminLogin=function(){
 
     const password =
-    document.getElementById("adminPassword").value;
+    document
+    .getElementById(
+        "adminPassword"
+    )
+    .value;
+
 
     const message =
-    document.getElementById("adminMessage");
+    document
+    .getElementById(
+        "adminMessage"
+    );
 
-    if(password===ADMIN_PASSWORD){
+
+    if(
+        password===ADMIN_PASSWORD
+    ){
 
         message.innerHTML="";
 
+
         document
-        .getElementById("adminPanel")
+        .getElementById(
+            "adminPanel"
+        )
         .style.display="block";
+
 
         loadPending();
 
     }
     else{
 
-        message.innerHTML=
-        "<div class='error'>Wrong Password!</div>";
+        message.innerHTML =
+        "<div class='error'>" +
+        "Wrong Password!" +
+        "</div>";
 
     }
 
 };
 
 
-/* PENDING */
+/* PENDING MEMBERS */
 
 function loadPending(){
 
     const list =
-    document.getElementById("pendingList");
+    document
+    .getElementById(
+        "pendingList"
+    );
 
-    list.innerHTML="Loading...";
+
+    list.innerHTML =
+    "Loading...";
+
 
     onSnapshot(
-        collection(db,"members"),
+        collection(
+            db,
+            "members"
+        ),
         snapshot=>{
 
             list.innerHTML="";
 
+
             let found=false;
+
 
             snapshot.forEach(item=>{
 
-                const data=item.data();
+                const data =
+                item.data();
 
-                if(data.status==="Pending"){
+
+                if(
+                    data.status==="Pending"
+                ){
 
                     found=true;
 
-                    const div=
-                    document.createElement("div");
 
-                    div.className="donor";
+                    const div =
+                    document
+                    .createElement(
+                        "div"
+                    );
 
-                    div.innerHTML=
 
-                    "<strong>"+
+                    div.className =
+                    "donor";
+
+
+                    div.innerHTML =
+
+                    "<strong>" +
+
                     safe(
                         data.fullNameEnglish ||
                         data.fullNameBangla
-                    )+
-                    "</strong><br>"+
-                    "Role: "+
-                    safe(data.interestedRole)+
-                    "<br>"+
-                    "Phone: "+
-                    safe(data.mobileNumber)+
-                    "<br><br>"+
+                    ) +
 
-                    "<button class='btn' "+
-                    "style='width:auto;padding:6px 12px;' "+
-                    "onclick=\"approveMember('"+
-                    item.id+
-                    "')\">"+
-                    "Approve"+
+                    "</strong><br>" +
+
+                    "Role: " +
+
+                    safe(
+                        data.interestedRole
+                    ) +
+
+                    "<br>" +
+
+                    "Phone: " +
+
+                    safe(
+                        data.mobileNumber
+                    ) +
+
+                    "<br><br>" +
+
+
+                    "<button " +
+
+                    "class='btn' " +
+
+                    "style='width:auto;" +
+                    "padding:6px 12px;' " +
+
+                    "onclick=\"approveMember('" +
+                    item.id +
+                    "')\">" +
+
+                    "Approve" +
+
                     "</button>";
 
-                    list.appendChild(div);
+
+                    list.appendChild(
+                        div
+                    );
 
                 }
 
             });
 
+
             if(!found){
 
-                list.innerHTML=
+                list.innerHTML =
                 "No pending members.";
 
             }
@@ -1860,25 +2645,37 @@ function loadPending(){
 
 /* APPROVE MEMBER */
 
-window.approveMember=async function(id){
+window.approveMember =
+async function(id){
 
     try{
 
         await updateDoc(
-            doc(db,"members",id),
+            doc(
+                db,
+                "members",
+                id
+            ),
             {
                 status:"Approved"
             }
         );
 
-        alert("Member Approved!");
+
+        alert(
+            "Member Approved!"
+        );
 
     }
     catch(error){
 
         console.error(error);
 
-        alert("Approval failed.");
+
+        alert(
+            "Approval failed.\n\n" +
+            error.message
+        );
 
     }
 
@@ -1891,16 +2688,22 @@ window.memberLogin=function(){
 
     const phone =
     document
-    .getElementById("memberLoginPhone")
+    .getElementById(
+        "memberLoginPhone"
+    )
     .value;
+
 
     if(!phone){
 
-        alert("Please enter phone number.");
+        alert(
+            "Please enter phone number."
+        );
 
         return;
 
     }
+
 
     alert(
         "Member login system will be connected with Firebase Authentication."
@@ -1913,12 +2716,29 @@ window.memberLogin=function(){
 
 function safe(value){
 
-    return String(value || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+    return String(
+        value || ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 
 }
 
