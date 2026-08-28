@@ -2490,6 +2490,35 @@ async function(id){
 
 };
 
+    /* DELETE MEMBER */
+
+window.deleteMember = async function(id){
+
+    if(!confirm("Are you sure you want to delete this member?")){
+        return;
+    }
+
+    try{
+
+        await deleteDoc(
+            doc(db, "members", id)
+        );
+
+        alert("Member deleted successfully!");
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "Delete failed.\n\n" +
+            error.message
+        );
+
+    }
+
+};
 
 /* MEMBER LOGIN */
 
